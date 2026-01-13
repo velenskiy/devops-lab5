@@ -55,7 +55,7 @@ def test_create_user_with_invalid_email():
 def test_delete_user():
     '''Удаление пользователя'''
     temp_user = {
-        'name': 'Temp User',
+        'name': 'Temp User1',
         'email': 'temp@gmail.com',
     }
     create_response = client.post("/api/v1/user", json=temp_user)
@@ -68,3 +68,4 @@ def test_delete_user():
     #check
     deleted_response = client.get("/api/v1/user", params={"email": temp_user['email']})
     assert deleted_response.status_code == 404
+
